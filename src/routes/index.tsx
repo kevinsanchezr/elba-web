@@ -138,7 +138,7 @@ function Index() {
               src={heroImg}
               alt="Портативное устройство ELBA"
             />
-            <div className="absolute bottom-6 right-0 hidden border-l-2 border-primary bg-background/90 px-5 py-3 text-sm backdrop-blur-sm sm:block lg:right-6">
+            <div className="absolute bottom-6 right-0 translate-y-6 border-l-2 border-primary bg-background/90 px-5 py-3 text-sm backdrop-blur-sm sm:translate-y-0 lg:right-6">
               <strong className="block">Компактно. Автономно.</strong>
               <span className="text-muted-foreground">Для работы вдали от инфраструктуры</span>
             </div>
