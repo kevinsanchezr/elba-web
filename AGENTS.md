@@ -8,3 +8,8 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project architecture
+
+- Keep the ELBA site as a single Russian-language product page at `/`; this preserves a focused presentation for the concept-stage device.
+- Store uploaded product imagery through Lovable Assets and import asset pointers; this avoids committing heavy source binaries.
