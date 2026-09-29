@@ -76,7 +76,7 @@
     right: -10%;
     width: min(57vw, 850px);
     height: 74%;
-    border-radius: 0 0 0 55%;
+    border-radius: 0;
     background: var(--color-accent);
   }
   .signal-rings {
@@ -138,8 +138,7 @@
 }
 @media (max-width: 639px) {
   .hero-shape {
-    width: 88vw;
-    height: 38%;
+    display: none;
   }
   .signal-rings {
     right: -22rem;
