@@ -14,10 +14,11 @@ import {
   Truck,
   WifiOff,
 } from "lucide-react";
-import heroAsset from "@/assets/elba-hero.jpg.asset.json";
-import explodedAsset from "@/assets/elba-exploded.jpg.asset.json";
-import mariaAsset from "@/assets/maria-rural.png.asset.json";
-import almeidaAsset from "@/assets/almeida-boyaca.png.asset.json";
+const publicPath = import.meta.env.BASE_URL;
+const heroImg = `${publicPath}images/elba-hero.webp`;
+const explodedImg = `${publicPath}images/elba-exploded.webp`;
+const mariaImg = `${publicPath}images/maria-rural.webp`;
+const almeidaImg = `${publicPath}images/almeida-boyaca.webp`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -77,13 +78,27 @@ function Index() {
           <a href="#top" className="text-2xl font-bold tracking-normal" aria-label="ELBA — наверх">
             ELBA<span className="text-primary">.</span>
           </a>
-          <nav className="hidden items-center gap-8 text-sm font-medium md:flex" aria-label="Основная навигация">
-            <a className="transition-colors hover:text-primary" href="#problem">Зачем ELBA</a>
-            <a className="transition-colors hover:text-primary" href="#system">Как работает</a>
-            <a className="transition-colors hover:text-primary" href="#features">Возможности</a>
-            <a className="transition-colors hover:text-primary" href="#audience">Для кого</a>
+          <nav
+            className="hidden items-center gap-8 text-sm font-medium md:flex"
+            aria-label="Основная навигация"
+          >
+            <a className="transition-colors hover:text-primary" href="#problem">
+              Зачем ELBA
+            </a>
+            <a className="transition-colors hover:text-primary" href="#system">
+              Как работает
+            </a>
+            <a className="transition-colors hover:text-primary" href="#features">
+              Возможности
+            </a>
+            <a className="transition-colors hover:text-primary" href="#audience">
+              Для кого
+            </a>
           </nav>
-          <a className="inline-flex h-11 items-center gap-2 border border-foreground px-5 text-sm font-semibold transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground" href="#contact">
+          <a
+            className="inline-flex h-11 items-center gap-2 border border-foreground px-5 text-sm font-semibold transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
+            href="#contact"
+          >
             Стать партнёром <ArrowRight className="size-4" aria-hidden="true" />
           </a>
         </div>
@@ -97,13 +112,19 @@ function Index() {
               <span className="size-2 rounded-full bg-primary" /> Концепция медицинского устройства
             </div>
             <h1 className="text-balance text-5xl font-bold leading-[1.03] sm:text-6xl lg:text-7xl">
-              Помощь начинается<br />даже без <span className="text-primary">интернета</span>
+              Помощь начинается
+              <br />
+              даже без <span className="text-primary">интернета</span>
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-              ELBA измеряет основные показатели, оценивает срочность и передаёт результат в медпункт по радиоканалу.
+              ELBA измеряет основные показатели, оценивает срочность и передаёт результат в медпункт
+              по радиоканалу.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <a className="inline-flex h-14 items-center justify-center gap-3 bg-primary px-7 text-sm font-bold text-primary-foreground transition-transform hover:-translate-y-0.5" href="#system">
+              <a
+                className="inline-flex h-14 items-center justify-center gap-3 bg-primary px-7 text-sm font-bold text-primary-foreground transition-transform hover:-translate-y-0.5"
+                href="#system"
+              >
                 Узнать, как это работает <ArrowDown className="size-4" aria-hidden="true" />
               </a>
               <div className="inline-flex h-14 items-center gap-3 border border-border px-5 text-sm font-medium">
@@ -112,7 +133,11 @@ function Index() {
             </div>
           </div>
           <div className="relative z-10 flex h-full min-h-[420px] items-end justify-center lg:justify-end">
-            <img className="product-float w-full max-w-[610px] object-contain mix-blend-multiply" src={heroAsset.url} alt="Портативное устройство ELBA" />
+            <img
+              className="product-float w-full max-w-[610px] object-contain mix-blend-multiply"
+              src={heroImg}
+              alt="Портативное устройство ELBA"
+            />
             <div className="absolute bottom-6 right-0 hidden border-l-2 border-primary bg-background/90 px-5 py-3 text-sm backdrop-blur-sm sm:block lg:right-6">
               <strong className="block">Компактно. Автономно.</strong>
               <span className="text-muted-foreground">Для работы вдали от инфраструктуры</span>
@@ -125,20 +150,36 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid items-center gap-12 lg:grid-cols-[1.08fr_.92fr] lg:gap-20">
             <div className="relative">
-              <img className="aspect-[11/8] w-full object-cover" src={mariaAsset.url} alt="Мария возле своего дома в сельской местности Колумбии" />
+              <img
+                className="aspect-[11/8] w-full object-cover"
+                src={mariaImg}
+                alt="Мария возле своего дома в сельской местности Колумбии"
+              />
               <div className="absolute -bottom-6 right-0 bg-primary px-6 py-5 text-primary-foreground sm:right-8">
                 <span className="block text-3xl font-bold">2 часа</span>
-                <span className="text-sm text-primary-foreground/75">пешком до ближайшего города</span>
+                <span className="text-sm text-primary-foreground/75">
+                  пешком до ближайшего города
+                </span>
               </div>
             </div>
             <div>
               <p className="section-kicker">Это Мария</p>
-              <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">Когда помощь слишком далеко</h2>
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">Мария — фермер из Колумбии. Она живёт одна в горах. До ближайшего города — два часа пешком или сорок минут на машине, если транспорт вообще есть.</p>
-              <p className="mt-5 text-lg font-semibold leading-relaxed">В экстренной ситуации получить медицинскую помощь для неё почти невозможно.</p>
+              <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
+                Когда помощь слишком далеко
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                Мария — фермер из Колумбии. Она живёт одна в горах. До ближайшего города — два часа
+                пешком или сорок минут на машине, если транспорт вообще есть.
+              </p>
+              <p className="mt-5 text-lg font-semibold leading-relaxed">
+                В экстренной ситуации получить медицинскую помощь для неё почти невозможно.
+              </p>
               <div className="mt-9 flex items-start gap-4 border-t border-border pt-7">
                 <Mountain className="mt-1 size-6 shrink-0 text-primary" aria-hidden="true" />
-                <p className="text-sm leading-relaxed text-muted-foreground">Расстояние, низкий доход, нехватка технологий и цифровых навыков ограничивают доступ сельских жителей к медицинской помощи.</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Расстояние, низкий доход, нехватка технологий и цифровых навыков ограничивают
+                  доступ сельских жителей к медицинской помощи.
+                </p>
               </div>
             </div>
           </div>
@@ -147,20 +188,33 @@ function Index() {
             <div className="flex flex-col justify-center p-8 sm:p-12 lg:p-16">
               <p className="section-kicker">Глобальная проблема</p>
               <p className="mt-5 text-6xl font-bold text-primary sm:text-7xl">3,4 млрд</p>
-              <h3 className="mt-5 max-w-lg text-2xl font-semibold leading-snug">человек живут в сельской местности — это 43% населения мира.</h3>
-              <p className="mt-6 max-w-lg text-sm leading-relaxed text-background/65">Мария не одна. Для многих консультация находится в нескольких часах пути, повторный приём не происходит, а стоимость транспорта становится непреодолимым барьером.</p>
+              <h3 className="mt-5 max-w-lg text-2xl font-semibold leading-snug">
+                человек живут в сельской местности — это 43% населения мира.
+              </h3>
+              <p className="mt-6 max-w-lg text-sm leading-relaxed text-background/65">
+                Мария не одна. Для многих консультация находится в нескольких часах пути, повторный
+                приём не происходит, а стоимость транспорта становится непреодолимым барьером.
+              </p>
             </div>
-            <img className="h-full min-h-[360px] w-full object-cover opacity-85" src={almeidaAsset.url} alt="Альмейда, Бояка — удалённое поселение в Колумбии" />
+            <img
+              className="h-full min-h-[360px] w-full object-cover opacity-85"
+              src={almeidaImg}
+              alt="Альмейда, Бояка — удалённое поселение в Колумбии"
+            />
           </div>
 
           <div className="mt-12 grid gap-8 border-b border-border pb-12 lg:grid-cols-[.45fr_.55fr]">
             <div>
               <p className="section-kicker">Альмейда, Бояка</p>
-              <h3 className="mt-4 text-2xl font-bold">500 жителей в центре — и тысячи в окрестных горах</h3>
+              <h3 className="mt-4 text-2xl font-bold">
+                500 жителей в центре — и тысячи в окрестных горах
+              </h3>
             </div>
             <blockquote className="text-2xl font-semibold leading-relaxed sm:text-3xl">
               «Здоровье не должно зависеть от географии».
-              <footer className="mt-4 text-sm font-normal text-muted-foreground">— опыт работы ELBA с удалёнными сообществами</footer>
+              <footer className="mt-4 text-sm font-normal text-muted-foreground">
+                — опыт работы ELBA с удалёнными сообществами
+              </footer>
             </blockquote>
           </div>
         </div>
@@ -171,7 +225,9 @@ function Index() {
           <div className="grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:gap-20">
             <div>
               <p className="section-kicker text-primary">Простой принцип</p>
-              <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">Три шага от измерения до медпункта</h2>
+              <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
+                Три шага от измерения до медпункта
+              </h2>
             </div>
             <div className="grid border-t border-background/25 sm:grid-cols-3">
               {[
@@ -179,7 +235,10 @@ function Index() {
                 ["02", "Локальная обработка", "Данные предварительно оцениваются на устройстве."],
                 ["03", "Передача по радио", "Краткая запись уходит на приёмный узел по LoRa."],
               ].map(([number, title, text]) => (
-                <article key={number} className="border-b border-background/25 py-7 sm:border-l sm:px-6">
+                <article
+                  key={number}
+                  className="border-b border-background/25 py-7 sm:border-l sm:px-6"
+                >
                   <span className="font-mono text-sm text-primary">{number}</span>
                   <h3 className="mt-8 text-lg font-semibold">{title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-background/65">{text}</p>
@@ -188,7 +247,8 @@ function Index() {
             </div>
           </div>
           <p className="mt-12 max-w-3xl border-l-2 border-primary pl-5 text-sm leading-relaxed text-background/70">
-            Основной сценарий не требует интернета или сотовой сети. Для передачи необходима радиосвязь с приёмным узлом.
+            Основной сценарий не требует интернета или сотовой сети. Для передачи необходима
+            радиосвязь с приёмным узлом.
           </p>
         </div>
       </section>
@@ -198,17 +258,26 @@ function Index() {
           <div className="max-w-2xl">
             <p className="section-kicker">Возможности</p>
             <h2 className="mt-4 text-4xl font-bold sm:text-5xl">Всё необходимое — внутри</h2>
-            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">Продуманная архитектура для первичной оценки там, где привычная связь недоступна.</p>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+              Продуманная архитектура для первичной оценки там, где привычная связь недоступна.
+            </p>
           </div>
           <div className="mt-14 grid border-t border-border md:grid-cols-2 lg:grid-cols-3">
             {features.map(({ icon: Icon, title, text }, index) => (
-              <article key={title} className="group border-b border-border py-8 md:px-8 md:first:pl-0 lg:min-h-64 lg:border-r lg:last:border-r-0">
+              <article
+                key={title}
+                className="group border-b border-border py-8 md:px-8 md:first:pl-0 lg:min-h-64 lg:border-r lg:last:border-r-0"
+              >
                 <div className="flex items-center justify-between">
-                  <span className="flex size-12 items-center justify-center bg-accent text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground"><Icon className="size-6" /></span>
+                  <span className="flex size-12 items-center justify-center bg-accent text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Icon className="size-6" />
+                  </span>
                   <span className="font-mono text-xs text-muted-foreground">0{index + 1}</span>
                 </div>
                 <h3 className="mt-9 text-xl font-semibold">{title}</h3>
-                <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">{text}</p>
+                <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
+                  {text}
+                </p>
               </article>
             ))}
           </div>
@@ -218,18 +287,41 @@ function Index() {
       <section className="bg-secondary py-24 sm:py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:px-10">
           <div className="order-2 lg:order-1">
-            <img className="w-full mix-blend-multiply" src={explodedAsset.url} alt="Концептуальная компоновка компонентов ELBA" />
-            <p className="mt-3 text-xs text-muted-foreground">Концептуальная компоновка. Расположение компонентов уточняется.</p>
+            <img
+              className="w-full mix-blend-multiply"
+              src={explodedImg}
+              alt="Концептуальная компоновка компонентов ELBA"
+            />
+            <p className="mt-3 text-xs text-muted-foreground">
+              Концептуальная компоновка. Расположение компонентов уточняется.
+            </p>
           </div>
           <div className="order-1 lg:order-2 lg:pl-12">
             <p className="section-kicker">Основа системы</p>
-            <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">Технология, которая остаётся рядом</h2>
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">Вычислительный модуль, радиоканал и голосовой интерфейс объединены в автономном корпусе. Данные обрабатываются локально и остаются доступными на приёмном узле.</p>
+            <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
+              Технология, которая остаётся рядом
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              Вычислительный модуль, радиоканал и голосовой интерфейс объединены в автономном
+              корпусе. Данные обрабатываются локально и остаются доступными на приёмном узле.
+            </p>
             <div className="mt-9 grid grid-cols-2 gap-px bg-border">
-              <div className="bg-secondary p-5"><Cpu className="size-5 text-primary" /><strong className="mt-3 block text-sm">ESP32-S3</strong></div>
-              <div className="bg-secondary p-5"><Radio className="size-5 text-primary" /><strong className="mt-3 block text-sm">LoRa</strong></div>
-              <div className="bg-secondary p-5"><Thermometer className="size-5 text-primary" /><strong className="mt-3 block text-sm">3 показателя</strong></div>
-              <div className="bg-secondary p-5"><AudioLines className="size-5 text-primary" /><strong className="mt-3 block text-sm">Голосовые подсказки</strong></div>
+              <div className="bg-secondary p-5">
+                <Cpu className="size-5 text-primary" />
+                <strong className="mt-3 block text-sm">ESP32-S3</strong>
+              </div>
+              <div className="bg-secondary p-5">
+                <Radio className="size-5 text-primary" />
+                <strong className="mt-3 block text-sm">LoRa</strong>
+              </div>
+              <div className="bg-secondary p-5">
+                <Thermometer className="size-5 text-primary" />
+                <strong className="mt-3 block text-sm">3 показателя</strong>
+              </div>
+              <div className="bg-secondary p-5">
+                <AudioLines className="size-5 text-primary" />
+                <strong className="mt-3 block text-sm">Голосовые подсказки</strong>
+              </div>
             </div>
           </div>
         </div>
@@ -238,15 +330,37 @@ function Index() {
       <section id="audience" className="py-24 sm:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <p className="section-kicker">Для кого</p>
-          <h2 className="mt-4 max-w-2xl text-4xl font-bold sm:text-5xl">Там, где каждая минута имеет значение</h2>
+          <h2 className="mt-4 max-w-2xl text-4xl font-bold sm:text-5xl">
+            Там, где каждая минута имеет значение
+          </h2>
           <div className="mt-14 grid gap-px bg-border md:grid-cols-3">
             {[
-              [Stethoscope, "Фельдшерские пункты", "Дополнительный инструмент для первичной оценки состояния."],
-              [Truck, "Выездные бригады", "Передача краткой записи до возвращения в зону покрытия."],
-              [MapPin, "Удалённые населённые пункты", "Связь с локальным медпунктом без сотовой инфраструктуры."],
+              [
+                Stethoscope,
+                "Фельдшерские пункты",
+                "Дополнительный инструмент для первичной оценки состояния.",
+              ],
+              [
+                Truck,
+                "Выездные бригады",
+                "Передача краткой записи до возвращения в зону покрытия.",
+              ],
+              [
+                MapPin,
+                "Удалённые населённые пункты",
+                "Связь с локальным медпунктом без сотовой инфраструктуры.",
+              ],
             ].map(([Icon, title, text]) => {
               const IconComponent = Icon as typeof Stethoscope;
-              return <article key={title as string} className="bg-background p-8 sm:p-10"><IconComponent className="size-8 text-primary" /><h3 className="mt-12 text-xl font-semibold">{title as string}</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{text as string}</p></article>;
+              return (
+                <article key={title as string} className="bg-background p-8 sm:p-10">
+                  <IconComponent className="size-8 text-primary" />
+                  <h3 className="mt-12 text-xl font-semibold">{title as string}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {text as string}
+                  </p>
+                </article>
+              );
             })}
           </div>
         </div>
@@ -256,8 +370,12 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <p className="section-kicker">Человеческое значение</p>
           <div className="mt-5 grid gap-8 lg:grid-cols-[.7fr_.3fr] lg:items-end">
-            <h2 className="text-4xl font-bold leading-tight sm:text-6xl">Медицина — это не только технологии. Это люди, которым помощь нужна вовремя.</h2>
-            <p className="border-l-2 border-primary pl-5 text-lg font-semibold leading-relaxed">Здоровье — это право, а не географическая привилегия.</p>
+            <h2 className="text-4xl font-bold leading-tight sm:text-6xl">
+              Медицина — это не только технологии. Это люди, которым помощь нужна вовремя.
+            </h2>
+            <p className="border-l-2 border-primary pl-5 text-lg font-semibold leading-relaxed">
+              Здоровье — это право, а не географическая привилегия.
+            </p>
           </div>
         </div>
       </section>
@@ -267,10 +385,18 @@ function Index() {
         <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[1fr_auto] lg:items-end lg:px-10">
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-widest">Открыты к сотрудничеству</p>
-            <h2 className="mt-5 text-4xl font-bold leading-tight sm:text-6xl">Создадим работающий прототип вместе</h2>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/75">Ищем клинических и технологических партнёров для разработки прототипа и подготовки пилотных испытаний.</p>
+            <h2 className="mt-5 text-4xl font-bold leading-tight sm:text-6xl">
+              Создадим работающий прототип вместе
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/75">
+              Ищем клинических и технологических партнёров для разработки прототипа и подготовки
+              пилотных испытаний.
+            </p>
           </div>
-          <a className="inline-flex h-14 items-center justify-center gap-3 bg-foreground px-7 text-sm font-bold text-background transition-transform hover:-translate-y-0.5" href="mailto:rodriguezk@internet.ru">
+          <a
+            className="inline-flex h-14 items-center justify-center gap-3 bg-foreground px-7 text-sm font-bold text-background transition-transform hover:-translate-y-0.5"
+            href="mailto:rodriguezk@internet.ru"
+          >
             Обсудить сотрудничество <ArrowRight className="size-4" />
           </a>
         </div>
@@ -279,15 +405,24 @@ function Index() {
       <section className="border-b border-border py-14">
         <div className="mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-[.35fr_.65fr] lg:px-10">
           <h2 className="text-2xl font-bold">Текущий статус</h2>
-          <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">Подготовлены концепция и архитектура системы. Точность измерений, дальность связи и качество классификации предстоит проверить. Клиническая эффективность не установлена.</p>
+          <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
+            Подготовлены концепция и архитектура системы. Точность измерений, дальность связи и
+            качество классификации предстоит проверить. Клиническая эффективность не установлена.
+          </p>
         </div>
       </section>
 
       <footer className="py-10">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 text-sm sm:flex-row sm:items-center sm:justify-between lg:px-10">
-          <strong className="text-xl">ELBA<span className="text-primary">.</span></strong>
-          <p className="text-muted-foreground">Концепция устройства для первичной оценки состояния</p>
-          <a className="font-medium hover:text-primary" href="mailto:rodriguezk@internet.ru">rodriguezk@internet.ru</a>
+          <strong className="text-xl">
+            ELBA<span className="text-primary">.</span>
+          </strong>
+          <p className="text-muted-foreground">
+            Концепция устройства для первичной оценки состояния
+          </p>
+          <a className="font-medium hover:text-primary" href="mailto:rodriguezk@internet.ru">
+            rodriguezk@internet.ru
+          </a>
         </div>
       </footer>
     </main>

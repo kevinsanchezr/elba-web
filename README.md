@@ -1,24 +1,54 @@
-# Эстетичный Продукт
+# ELBA
 
-necesito una paagina para mi prodcuto mismas caracteristicas mismo estilo y colores, minimalista, solo en ruso, estetico, convencente, como ni producto
+Landing page (Russian) for ELBA — a portable device for primary health
+assessment in offline rural settings.
 
-This project was built with [Lovable](https://lovable.dev).
+## Stack
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/c772721f-4802-4539-8a50-ca2b44b9000e).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+TanStack Start + TanStack Router, React 19, Vite 8, Tailwind CSS 4 with
+shadcn/ui components.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requires Node.js 20+.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
+
+The dev server listens on <http://localhost:8080>.
+
+## Commands
+
+| Command             | Description                             |
+| ------------------- | --------------------------------------- |
+| `npm run dev`       | Start the dev server                    |
+| `npm run build`     | Production build into `.vercel/output/` |
+| `npm run build:pages` | Static bundle for GitHub Pages          |
+| `npm run preview`   | Serve the production build              |
+| `npm run typecheck` | `tsc --noEmit`                          |
+| `npm run lint`      | ESLint                                  |
+| `npm run format`    | Prettier write                          |
+
+## Deploying to GitHub Pages
+
+The included GitHub Actions workflow publishes every push to `main` to:
+
+<https://kevinsanchezr.github.io/elba-web/>
+
+In the repository, open **Settings → Pages** and select **GitHub Actions** as
+the source. A custom domain can be added there later, once it has been bought.
+
+## Project structure
+
+| Path                    | Purpose                                  |
+| ----------------------- | ---------------------------------------- |
+| `src/routes/index.tsx`  | The single landing page (`/`)            |
+| `src/routes/__root.tsx` | App shell, global meta, 404 and error UI |
+| `src/styles.css`        | Tailwind 4 theme and design tokens       |
+| `public/images/`        | Product imagery (WebP)                   |
+| `src/components/ui/`    | shadcn/ui primitives                     |
+
+See `src/routes/README.md` for the file-based routing conventions and
+`AGENTS.md` for the project conventions.

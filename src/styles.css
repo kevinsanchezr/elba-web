@@ -35,8 +35,12 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     margin: 0;
     background: var(--color-background);
@@ -44,9 +48,18 @@
     font-family: var(--font-sans);
     letter-spacing: 0;
   }
-  ::selection { background: var(--color-primary); color: var(--color-primary-foreground); }
-  a, button { outline-offset: 4px; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--color-ring); }
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+  a,
+  button {
+    outline-offset: 4px;
+  }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-ring);
+  }
 }
 
 @layer components {
@@ -84,28 +97,60 @@
     border: inherit;
     border-radius: inherit;
   }
-  .signal-rings::after { inset: 8rem; }
+  .signal-rings::after {
+    inset: 8rem;
+  }
 }
 
 @keyframes rise {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
-.animate-rise { animation: rise .7s ease-out both; }
-.product-float { animation: float 5s ease-in-out infinite; }
+.animate-rise {
+  animation: rise 0.7s ease-out both;
+}
+.product-float {
+  animation: float 5s ease-in-out infinite;
+}
 
 @media (max-width: 1023px) {
-  .hero-shape { width: 70vw; height: 48%; top: auto; bottom: 0; }
+  .hero-shape {
+    width: 70vw;
+    height: 48%;
+    top: auto;
+    bottom: 0;
+  }
 }
 @media (max-width: 639px) {
-  .hero-shape { width: 88vw; height: 38%; }
-  .signal-rings { right: -22rem; }
+  .hero-shape {
+    width: 88vw;
+    height: 38%;
+  }
+  .signal-rings {
+    right: -22rem;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .animate-rise, .product-float { animation: none; }
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-rise,
+  .product-float {
+    animation: none;
+  }
 }
