@@ -11,6 +11,9 @@ import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 
+const siteUrl = "https://kevinsanchezr.github.io/elba-web";
+const socialImage = `${siteUrl}/images/elba-hero.webp`;
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -77,7 +80,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Портативное устройство для первичной оценки состояния" },
       { name: "author", content: "ELBA" },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: siteUrl },
+      { property: "og:image", content: socialImage },
+      { property: "og:image:alt", content: "Устройство ELBA для автономной оценки состояния" },
+      { property: "og:image:width", content: "900" },
+      { property: "og:image:height", content: "900" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: socialImage },
     ],
     links: [
       {
