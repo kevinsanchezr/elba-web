@@ -7,6 +7,7 @@ import {
   Cpu,
   Database,
   MapPin,
+  Mountain,
   Radio,
   Stethoscope,
   Thermometer,
@@ -15,6 +16,8 @@ import {
 } from "lucide-react";
 import heroAsset from "@/assets/elba-hero.jpg.asset.json";
 import explodedAsset from "@/assets/elba-exploded.jpg.asset.json";
+import mariaAsset from "@/assets/maria-rural.png.asset.json";
+import almeidaAsset from "@/assets/almeida-boyaca.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -75,6 +78,7 @@ function Index() {
             ELBA<span className="text-primary">.</span>
           </a>
           <nav className="hidden items-center gap-8 text-sm font-medium md:flex" aria-label="Основная навигация">
+            <a className="transition-colors hover:text-primary" href="#problem">Зачем ELBA</a>
             <a className="transition-colors hover:text-primary" href="#system">Как работает</a>
             <a className="transition-colors hover:text-primary" href="#features">Возможности</a>
             <a className="transition-colors hover:text-primary" href="#audience">Для кого</a>
@@ -113,6 +117,51 @@ function Index() {
               <strong className="block">Компактно. Автономно.</strong>
               <span className="text-muted-foreground">Для работы вдали от инфраструктуры</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="problem" className="py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.08fr_.92fr] lg:gap-20">
+            <div className="relative">
+              <img className="aspect-[11/8] w-full object-cover" src={mariaAsset.url} alt="Мария возле своего дома в сельской местности Колумбии" />
+              <div className="absolute -bottom-6 right-0 bg-primary px-6 py-5 text-primary-foreground sm:right-8">
+                <span className="block text-3xl font-bold">2 часа</span>
+                <span className="text-sm text-primary-foreground/75">пешком до ближайшего города</span>
+              </div>
+            </div>
+            <div>
+              <p className="section-kicker">Это Мария</p>
+              <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">Когда помощь слишком далеко</h2>
+              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">Мария — фермер из Колумбии. Она живёт одна в горах. До ближайшего города — два часа пешком или сорок минут на машине, если транспорт вообще есть.</p>
+              <p className="mt-5 text-lg font-semibold leading-relaxed">В экстренной ситуации получить медицинскую помощь для неё почти невозможно.</p>
+              <div className="mt-9 flex items-start gap-4 border-t border-border pt-7">
+                <Mountain className="mt-1 size-6 shrink-0 text-primary" aria-hidden="true" />
+                <p className="text-sm leading-relaxed text-muted-foreground">Расстояние, низкий доход, нехватка технологий и цифровых навыков ограничивают доступ сельских жителей к медицинской помощи.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-28 grid items-stretch bg-foreground text-background lg:grid-cols-2">
+            <div className="flex flex-col justify-center p-8 sm:p-12 lg:p-16">
+              <p className="section-kicker">Глобальная проблема</p>
+              <p className="mt-5 text-6xl font-bold text-primary sm:text-7xl">3,4 млрд</p>
+              <h3 className="mt-5 max-w-lg text-2xl font-semibold leading-snug">человек живут в сельской местности — это 43% населения мира.</h3>
+              <p className="mt-6 max-w-lg text-sm leading-relaxed text-background/65">Мария не одна. Для многих консультация находится в нескольких часах пути, повторный приём не происходит, а стоимость транспорта становится непреодолимым барьером.</p>
+            </div>
+            <img className="h-full min-h-[360px] w-full object-cover opacity-85" src={almeidaAsset.url} alt="Альмейда, Бояка — удалённое поселение в Колумбии" />
+          </div>
+
+          <div className="mt-12 grid gap-8 border-b border-border pb-12 lg:grid-cols-[.45fr_.55fr]">
+            <div>
+              <p className="section-kicker">Альмейда, Бояка</p>
+              <h3 className="mt-4 text-2xl font-bold">500 жителей в центре — и тысячи в окрестных горах</h3>
+            </div>
+            <blockquote className="text-2xl font-semibold leading-relaxed sm:text-3xl">
+              «Здоровье не должно зависеть от географии».
+              <footer className="mt-4 text-sm font-normal text-muted-foreground">— опыт работы ELBA с удалёнными сообществами</footer>
+            </blockquote>
           </div>
         </div>
       </section>
@@ -199,6 +248,16 @@ function Index() {
               const IconComponent = Icon as typeof Stethoscope;
               return <article key={title as string} className="bg-background p-8 sm:p-10"><IconComponent className="size-8 text-primary" /><h3 className="mt-12 text-xl font-semibold">{title as string}</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{text as string}</p></article>;
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-accent py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <p className="section-kicker">Человеческое значение</p>
+          <div className="mt-5 grid gap-8 lg:grid-cols-[.7fr_.3fr] lg:items-end">
+            <h2 className="text-4xl font-bold leading-tight sm:text-6xl">Медицина — это не только технологии. Это люди, которым помощь нужна вовремя.</h2>
+            <p className="border-l-2 border-primary pl-5 text-lg font-semibold leading-relaxed">Здоровье — это право, а не географическая привилегия.</p>
           </div>
         </div>
       </section>
