@@ -11,7 +11,7 @@ import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 
-const siteUrl = "https://kevinsanchezr.github.io/elba-web";
+const siteUrl = "https://elba.com.ru";
 const socialImage = `${siteUrl}/images/elba-hero.webp`;
 
 function NotFoundComponent() {
