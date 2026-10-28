@@ -274,18 +274,42 @@ function Index() {
           <p className="mt-4 text-xs text-muted-foreground">
             Мария и Лусия — собирательные образы.
           </p>
+          <div className="stats-context">
+            <p className="section-kicker">Мария не одна</p>
+            <h3>Масштаб проблемы — в трёх цифрах</h3>
+          </div>
           <div className="stats-strip">
             {[
-              ["17,9 млн", "человек ежегодно умирают от болезней сердца и сосудов"],
-              ["2,2 млрд", "человек в мире остаются без интернета"],
-              ["58%", "сельских жителей пользуются интернетом — против 85% в городах"],
-            ].map(([value, label]) => (
+              [
+                "Здоровье",
+                "17,9 млн",
+                "человек ежегодно умирают от болезней сердца и сосудов — это 32% всех смертей в мире",
+              ],
+              [
+                "Связь",
+                "2,2 млрд",
+                "человек остаются без интернета; 96% из них живут в странах с низким и средним доходом",
+              ],
+              [
+                "Неравенство",
+                "58%",
+                "сельских жителей пользуются интернетом — против 85% жителей городов",
+              ],
+            ].map(([category, value, label]) => (
               <div key={value}>
+                <span>{category}</span>
                 <strong>{value}</strong>
                 <p>{label}</p>
               </div>
             ))}
           </div>
+          <p className="stats-note">
+            После выписки риск остаётся: 34% из 221 пациента за 21 день мониторинга потребовали
+            вмешательства врача.
+          </p>
+          <p className="stats-sources">
+            Источники: ВОЗ, данные 2019 г.; МСЭ, Facts and Figures 2025; PubMed PMID 42728641.
+          </p>
           <div className="locations-block">
             <div className="locations-intro">
               <p className="section-kicker">Это происходит в России и в мире</p>
@@ -429,6 +453,7 @@ function Index() {
               ],
             ].map(([image, title, before, after]) => (
               <article key={title}>
+                <h3>{title}</h3>
                 <img src={image} alt={title} />
                 <div>
                   <span>Без ELBA</span>
@@ -436,7 +461,6 @@ function Index() {
                   <span>С ELBA</span>
                   <strong>{after}</strong>
                 </div>
-                <h3>{title}</h3>
               </article>
             ))}
           </div>

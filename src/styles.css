@@ -386,12 +386,31 @@
   .stats-strip {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 4rem;
+    margin-top: 1.5rem;
     background: var(--color-foreground);
     color: var(--color-background);
   }
   .stats-strip > div {
     padding: 2.5rem;
+  }
+  .stats-context {
+    margin-top: 4rem;
+  }
+  .stats-context h3 {
+    max-width: 52rem;
+    margin-top: 0.75rem;
+    font-size: clamp(2rem, 3.5vw, 3.25rem);
+    font-weight: 800;
+    line-height: 1.12;
+  }
+  .stats-strip > div > span {
+    display: block;
+    margin-bottom: 1rem;
+    color: color-mix(in oklab, var(--color-background) 48%, transparent);
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
   .stats-strip > div + div {
     border-left: 1px solid color-mix(in oklab, var(--color-background) 18%, transparent);
@@ -406,6 +425,20 @@
     color: color-mix(in oklab, var(--color-background) 68%, transparent);
     font-size: 0.8rem;
     line-height: 1.6;
+  }
+  .stats-note {
+    background: var(--color-primary);
+    padding: 1rem 1.5rem;
+    color: var(--color-primary-foreground);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+  .stats-sources {
+    margin-top: 0.75rem;
+    color: var(--color-muted-foreground);
+    font-size: 0.6rem;
+    line-height: 1.5;
   }
 
   .locations-block {
@@ -582,7 +615,7 @@
   .value-grid article {
     position: relative;
     display: grid;
-    grid-template-rows: 14rem 1fr auto;
+    grid-template-rows: auto 14rem 1fr;
     background: var(--color-secondary);
   }
   .value-grid img {
@@ -615,9 +648,10 @@
     color: var(--color-muted-foreground);
   }
   .value-grid h3 {
-    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
     padding: 1.25rem 1.75rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: 800;
   }
 
   .system-section {
@@ -940,17 +974,16 @@
     grid-template-columns: 1fr;
   }
   .value-grid article {
-    grid-template-columns: 16rem 1fr auto;
-    grid-template-rows: auto;
+    grid-template-columns: 16rem 1fr;
+    grid-template-rows: auto 1fr;
   }
   .value-grid img {
     height: 100%;
     min-height: 17rem;
   }
   .value-grid h3 {
-    writing-mode: vertical-rl;
-    border-top: 0;
-    border-left: 1px solid var(--color-border);
+    grid-column: 1 / -1;
+    border-bottom: 1px solid var(--color-border);
   }
   .system-steps {
     grid-template-columns: 1fr 1fr;
@@ -1128,9 +1161,7 @@
     height: 14rem;
   }
   .value-grid h3 {
-    writing-mode: initial;
-    border-top: 1px solid var(--color-border);
-    border-left: 0;
+    border-bottom: 1px solid var(--color-border);
   }
   .system-steps {
     grid-template-columns: 1fr;
